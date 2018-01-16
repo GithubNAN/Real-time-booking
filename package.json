@@ -1,0 +1,22 @@
+{
+    "name": "NewSocketIO",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "nodemon index.js"
+    },
+    "keywords": [],
+    "author": "Johnson Zack",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "socket.io": "^2.0.4",
+        "uuid": "^3.1.0"
+    },
+    "devDependencies": {
+        "morgan": "^1.9.0",
+        "nodemon": "^1.14.10"
+    }
+}

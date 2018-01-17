@@ -51,7 +51,8 @@ orderClick.do(e => e.preventDefault()).subscribe(() => {
 });
 
 //Order confirm by server
-socket_order.on('orderConfirm', ({ orderItem, orderId }) => {
+const orderConfirm = Rx.Observable.fromEvent(socket_order, 'orderConfirm')
+orderConfirm.subscribe(({ orderItem, orderId }) => {
     const node = document.createElement('li');
     node.setAttribute('data-key', orderId);
     const textNode = document.createTextNode(
@@ -59,7 +60,16 @@ socket_order.on('orderConfirm', ({ orderItem, orderId }) => {
     );
     node.appendChild(textNode);
     orderList.appendChild(node);
-});
+})
+// socket_order.on('orderConfirm', ({ orderItem, orderId }) => {
+//     const node = document.createElement('li');
+//     node.setAttribute('data-key', orderId);
+//     const textNode = document.createTextNode(
+//         `${orderItem}\n, Ordernumber: ${orderId}`
+//     );
+//     node.appendChild(textNode);
+//     orderList.appendChild(node);
+// });
 
 //Retrive order from server and list in the Admin order table
 socket_order.on(

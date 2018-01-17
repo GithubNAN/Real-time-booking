@@ -12,4 +12,5 @@ The challange is each client a individual people interact with a grounp of peopl
 * View the booking page: http://localhost:10086/
 
 ## Future upgrades
-* Sync back end order infomation
+* Sync back end group order infomation 
+* Add database
